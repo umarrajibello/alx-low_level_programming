@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char str[] = "biyte(s)";
+	char str[] = "byte(s)";
 
 	printf("Size of a char: %d %s\n", sizeof(char), str);
 	printf("Size of an int: %d %s\n", sizeof(int), str);
