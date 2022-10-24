@@ -15,7 +15,7 @@ int main(void)
 	{
 		putchar((i % 10) + '0');
 	}
-	c='a';
+	c = 'a';
 	while (c <= 'f')
 	{
 		putchar(c);
