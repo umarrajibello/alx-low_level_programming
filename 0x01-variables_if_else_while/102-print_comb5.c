@@ -1,26 +1,32 @@
 #include <stdio.h>
 
 /**
- * main - This program prints numbers in ascending order neatly
+ * main - This program prints numbers of double 2-digit numbers
+ * seperated by comma and space
  *
  * Return: Always return 0 (Success)
  */
 int main(void)
 {
-	int i;
+	int i, j;
 
-	i = 0;
-	for (i = 0; i <= 9; i++)
+	for (i = 0; j <= 98; i++)
 	{
-		putchar((i % 10) + '0');
-		if (i == 9)
+		for (j = i + 1; j <= 99; j++)
 		{
-			continue;
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+			if (i == 98 && j == 99)
+			{
+				continue;
+			}
+			putchar(',');
+			putchar(' ');
 		}
-		putchar(',');
-		putchar(' ');
 	}
 	putchar('\n');
-
 	return (0);
 }
