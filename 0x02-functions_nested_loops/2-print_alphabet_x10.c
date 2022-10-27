@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * print_alphabet - a program that prints alphabets in lowercase
+ * print_alphabet_x10 - a program that prints alphabets in lowercase z10
  *
  * Return: Always 0.
  */
 int print_alphabet_x10(void)
 {
 	int i;
+
 	for (i = 0; i <= 9; i++)
 	{
 		char c;
+
 		c = 'a';
 		while (c <= 'z')
 		{
