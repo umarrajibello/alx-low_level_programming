@@ -10,4 +10,5 @@ int _isalpha(int);
 int print_sign(int);
 int _abs(int);
 int _isupper(int c);
+int _isdigit(int c);
 #endif /* MAIN_H */
