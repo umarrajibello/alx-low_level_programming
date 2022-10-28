@@ -11,4 +11,5 @@ int print_sign(int);
 int _abs(int);
 int _isupper(int c);
 int _isdigit(int c);
+int mul(int, int);
 #endif /* MAIN_H */
