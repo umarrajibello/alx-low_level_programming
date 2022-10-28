@@ -1,0 +1,13 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <stdio.h>
+int _putchar(char);
+int print_alphabet(void);
+int print_alphabet_x10(void);
+int _islower(int);
+int _isalpha(int);
+int print_sign(int);
+int _abs(int);
+int _isupper(int c);
+#endif /* MAIN_H */
