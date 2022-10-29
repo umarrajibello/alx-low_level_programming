@@ -7,4 +7,5 @@ int reset_to_98(int *);
 int swap_int(int *, int *);
 int _strlen(char *);
 char _puts(char *);
+char print_rev(char *);
 #endif /* MAIN_H */
