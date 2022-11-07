@@ -10,4 +10,5 @@ char _puts(char *);
 char print_rev(char *);
 char *_strcat(char *, char *);
 char *_strncat(char *, char *, int);
+char *_strncpy(char *, char *, int);
 #endif /* MAIN_H */
