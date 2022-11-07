@@ -9,4 +9,5 @@ int _strlen(char *);
 char _puts(char *);
 char print_rev(char *);
 char *_strcat(char *, char *);
+char *_strncat(char *, char *, int);
 #endif /* MAIN_H */
