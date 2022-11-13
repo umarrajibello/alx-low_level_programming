@@ -3,9 +3,9 @@
 /**
  * print_alphabet_x10 - a program that prints alphabets in lowercase z10
  *
- * Return: Always 0.
+ * Return: Always return void
  */
-int print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	int i;
 
@@ -21,5 +21,5 @@ int print_alphabet_x10(void)
 		}
 		_putchar('\n');
 	}
-	return (0);
+	return;
 }

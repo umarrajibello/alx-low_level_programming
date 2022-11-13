@@ -3,9 +3,9 @@
 /**
  * print_alphabet - a program that prints alphabets in lowercase
  *
- * Return: Always 0.
+ * Return: Always return void.
  */
-int print_alphabet(void)
+void print_alphabet(void)
 {
 	char c;
 
@@ -16,5 +16,5 @@ int print_alphabet(void)
 		c++;
 	}
 	_putchar('\n');
-	return (0);
+	return;
 }
