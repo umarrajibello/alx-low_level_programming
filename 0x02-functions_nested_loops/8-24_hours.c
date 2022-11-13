@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * jack_bauer - program to print 24 hours
@@ -17,12 +18,7 @@ void jack_bauer(void)
 			{
 				for (l = 0; l <= 9; l++)
 				{
-					_putchar('0' + i);
-					_putchar('0' + j);
-					_putchar(':');
-					_putchar('0' + k);
-					_putchar('0' + l);
-					_putchar('\n');
+					printf("%d%d:%d%d\n", i, j, k, l);
 				}
 			}
 		}
