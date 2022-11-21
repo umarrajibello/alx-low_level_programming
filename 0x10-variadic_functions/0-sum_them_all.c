@@ -1,18 +1,26 @@
-/**
- * _memset -fills in constant bytes to a pinted memory area.
- * @s: the string which is filled in and pointed to by *s.
- * @b: the constant byte b specified by the user
- * @n: the first n bytes of the memory area to be filled in.
- *
- * Return: return a pinter *s.
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	unsigned int i;
+#include <stdarg.h>
 
+/**
+ * sum_them_all - sum all the input args of the function.
+ * @n: Number of arguments received from the user.
+ *
+ * Return: return the sum of all inputs..
+ */
+int sum_them_all(const unsigned int n, ...)
+{
+	va_list va_ls;
+	unsigned int i, sum = 0;
+
+	if (n == 0)
+	{
+		return (0);
+	}
+	va_start(va_ls, n);
 	for (i = 0; i < n; i++)
 	{
-		*(s + i) = b;
+		sum += va_arg(va_ls, unsigned int);
 	}
-	return (s);
+	va_end(va_ls);
+
+	return (sum);
 }
