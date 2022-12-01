@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _print_rev_recursion - prints a string in reverse
+  * _strlen_recursion - prints a string in reverse
   * @s: is the string recieved from the user
   *
   * Return: Returns void.
@@ -9,7 +9,7 @@
 int _strlen_recursion(char *s)
 {
 	int len = 0;
-	
+
 	if (*s)
 	{
 		len++;
