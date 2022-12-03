@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - program to use environment variables argc and  argv.
@@ -10,19 +9,11 @@
  */
 int main(int argc, char *argv[])
 {
-	int mul, a, b;
+	int i;
 
-	if (argc == 3)
+	for (i = 0; i < argc; i++)
 	{
-		a = atoi(argv[1]);
-		b = atoi(argv[2]);
-		mul = a * b;
-		printf("%d\n", mul);
-		return (0);
+		printf("%s\n", argv[i]);
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+	return (0);
 }
