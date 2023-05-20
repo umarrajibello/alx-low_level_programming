@@ -11,9 +11,9 @@ int main(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		for (j = i + 1; j <= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			for (k = j + 1; k <= 9; k++)
+			for (k = 0; k <= 9; k++)
 			{
 				for (l = 0; l <= 9; l++)
 				{
@@ -22,7 +22,7 @@ int main(void)
 					putchar (' ');
 					putchar('0' + k);
 					putchar('0' + l);
-					if (i >= 7 && j >= 8 && k >= 9 && l >= 9)
+					if (i >= 9 && j >= 9 && k >= 9 && l >= 9)
 					{
 						break;
 					}
