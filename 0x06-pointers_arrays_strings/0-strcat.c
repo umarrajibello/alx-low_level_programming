@@ -15,9 +15,10 @@ char *_strcat(char *dest, char *src)
 	len1 = strlen(dest);
 	len2 = strlen(src);
 
-	for (i = 0; i <= len2; i++)
+	for (i = 0; i < len2; i++)
 	{
 		*(dest + len1 + i - 1) = *(src + i);
 	}
+	*(dest + len1 + len2) = '\0';
 	return (dest);
 }
