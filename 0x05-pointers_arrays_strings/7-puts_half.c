@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * puts_half - prints last half of a str
@@ -22,7 +23,7 @@ void puts_half(char *str)
 	{
 		for (i = str_len / 2; i < str_len; i++)
 		{
-			_putchar(str[i + 2]);
+			_putchar(str[i + 1]);
 		}
 	}
 	_putchar('\n');
