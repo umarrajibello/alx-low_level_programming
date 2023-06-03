@@ -8,12 +8,9 @@
  */
 char *string_toupper(char *str)
 {
-	for (; *str != '\0'; str++)
+	for (; *str >= 'a' && *str <= 'z' && *str != '\0'; str++)
 	{
-		if (*str >= 'a' && *str <= 'z')
-		{
-			*str = *str - 32;
-		}
+		*str = *str - 32;
 	}
 	return (str);
 }
