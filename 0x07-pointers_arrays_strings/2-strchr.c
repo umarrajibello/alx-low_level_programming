@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strchar - Search for occurrence of a char
+ * _strchr - Search for occurrence of a char
  * @s: pointer to the string to be searched
  * @c: the char in question
  *
@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 	int i, flag;
 
 	flag = 0;
-	for(i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
 		{
