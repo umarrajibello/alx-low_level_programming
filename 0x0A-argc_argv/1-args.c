@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints its name
+ * main - Counts command line args
  * @argc: number of command line args
  * @argv: string of command line args
  *
@@ -9,6 +9,6 @@
  */
 int main(int argc, __attribute__((unused)) char **argv)
 {
-	printf("%d\n", argc);
+	printf("%d\n", argc - 1);
 	return (0);
 }
