@@ -11,55 +11,53 @@ void print_all(const char * const format, ...);
  */
 void print_all(const char * const format, ...)
 {
-	char c_arg;
-	bool comma = false;
-	int i_arg, i, n;
+	char c_arg, *seperator = "";
+	int i_arg;
 	float f_arg;
 	const char *s_arg, *ptr = format;
 	va_list param;
 
+	if (format == NULL)
+		return;
+
 	va_start(param, format);
-	n = strlen(format);
-	i = 0;
-	while (i < n)
+	while (*ptr != '\0')
 	{
-		while ((*ptr != '\0') && (ptr != NULL))
+		switch (*ptr)
 		{
-			switch (*ptr)
+		case 'c':
+			printf("%s", seperator);
+			c_arg = va_arg(param, int);
+			printf("%c", c_arg);
+			seperator = ", ";
+		break;
+		case 'i':
+			printf("%s", seperator);
+			i_arg = va_arg(param, int);
+			printf("%d", i_arg);
+			seperator = ", ";
+		break;
+		case 'f':
+			printf("%s", seperator);
+			f_arg = va_arg(param, double);
+			printf("%f", f_arg);
+			seperator = ", ";
+		break;
+		case 's':
+			printf("%s", seperator);
+			s_arg = va_arg(param, char *);
+			if (s_arg == NULL)
 			{
-			case 'c':
-				c_arg = va_arg(param, int);
-				printf("%c", c_arg);
-				comma = true;
-			break;
-			case 'i':
-				i_arg = va_arg(param, int);
-				printf("%d", i_arg);
-				comma = true;
-			break;
-			case 'f':
-				f_arg = va_arg(param, double);
-				printf("%f", f_arg);
-				comma = true;
-			break;
-			case 's':
-				s_arg = va_arg(param, char *);
-				if (s_arg == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-				printf("%s", s_arg);
-				comma = true;
-			break;
-			default:
-				comma = false;
+				printf("(nil)");
+				break;
 			}
-			ptr++;
-			if ((*ptr != '\0') &&  (comma == true))
-				printf(", ");
+			printf("%s", s_arg);
+			seperator = ", ";
+		break;
+		default:
+		break;
 		}
-		i++;
+		ptr++;
 	}
 	printf("\n");
 	va_end(param);
