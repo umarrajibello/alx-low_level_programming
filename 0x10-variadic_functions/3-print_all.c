@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	while (i < n)
 	{
-		while (*ptr != '\0')
+		while ((*ptr != '\0') && (ptr != NULL))
 		{
 			switch (*ptr)
 			{
