@@ -12,21 +12,15 @@ void print_all(const char * const format, ...);
 void print_all(const char * const format, ...)
 {
 	char c_arg, *seperator = "";
-	int i_arg;
+	int i_arg, i = 0;
 	float f_arg;
-	const char *s_arg, *ptr = format;
+	const char *s_arg;
 	va_list param;
 
-	if (format == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-
 	va_start(param, format);
-	while (*ptr != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
-		switch (*ptr)
+		switch (format[i])
 		{
 		case 'c':
 			printf("%s", seperator);
@@ -60,7 +54,7 @@ void print_all(const char * const format, ...)
 		default:
 		break;
 		}
-		ptr++;
+		i++;
 	}
 	printf("\n");
 	va_end(param);
