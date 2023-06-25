@@ -1,8 +1,6 @@
 #include "variadic_functions.h"
 #include <string.h>
-#include <stdbool.h>
 
-void print_all(const char * const format, ...);
 /**
  * print_all - prints strings with a seperator.
  * @format: string of format specifiers
@@ -12,7 +10,6 @@ void print_all(const char * const format, ...);
 void print_all(const char * const format, ...)
 {
 	char c_arg;
-	bool comma = false;
 	int i_arg, i, n;
 	float f_arg;
 	const char *s_arg, *ptr = format;
@@ -29,19 +26,16 @@ void print_all(const char * const format, ...)
 			{
 				c_arg = va_arg(param, int);
 				printf("%c", c_arg);
-				comma = true;
 			}
 			else if (*ptr == 'i')
 			{
 				i_arg = va_arg(param, int);
 				printf("%d", i_arg);
-				comma = true;
 			}
 			else if (*ptr == 'f')
 			{
 				f_arg = va_arg(param, double);
 				printf("%f", f_arg);
-				comma = true;
 			}
 			else if (*ptr == 's')
 			{
@@ -50,12 +44,9 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 				else
 					printf("%s", s_arg);
-				comma = true;
 			}
-			else
-				comma = false;
 			ptr++;
-			if ((*ptr != '\0') &&  (comma == true))
+			if (i != n - 1)
 				printf(", ");
 		}
 		i++;
