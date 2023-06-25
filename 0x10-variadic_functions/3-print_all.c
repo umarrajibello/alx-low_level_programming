@@ -25,35 +25,34 @@ void print_all(const char * const format, ...)
 	{
 		while (*ptr != '\0')
 		{
-			if (*ptr == 'c')
+			switch (*ptr)
 			{
+			case 'c':
 				c_arg = va_arg(param, int);
 				printf("%c", c_arg);
 				comma = true;
-			}
-			else if (*ptr == 'i')
-			{
+			break;
+			case 'i':
 				i_arg = va_arg(param, int);
 				printf("%d", i_arg);
 				comma = true;
-			}
-			else if (*ptr == 'f')
-			{
+			break;
+			case 'f':
 				f_arg = va_arg(param, double);
 				printf("%f", f_arg);
 				comma = true;
-			}
-			else if (*ptr == 's')
-			{
+			break;
+			case 's':
 				s_arg = va_arg(param, char *);
 				if (s_arg == NULL)
 					printf("(nil)");
 				else
 					printf("%s", s_arg);
 				comma = true;
-			}
-			else
+			break;
+			default:
 				comma = false;
+			}
 			ptr++;
 			if ((*ptr != '\0') &&  (comma == true))
 				printf(", ");
