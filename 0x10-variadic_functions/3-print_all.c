@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 
 	if (format == NULL)
 	{
-		printf("(nil)\n");
+		printf("\n");
 		return;
 	}
 	va_start(param, format);
