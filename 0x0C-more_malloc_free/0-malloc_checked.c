@@ -10,7 +10,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *buff;
 
-	buff = malloc(b * sizeof(unsigned int));
+	buff = malloc(b * sizeof(b));
 	if ((b <= 0) || (buff == NULL))
 		exit(98);
 	return (buff);
