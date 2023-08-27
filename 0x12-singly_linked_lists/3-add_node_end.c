@@ -1,30 +1,53 @@
 #include "lists.h"
 
 /**
- * add_node_end - adds node at the end of sll
- * @head: head of the sll
- * @str: str member of the sll
+ * add_node_end - adds a node to a list at the end
+ * @head: pointer to the list
+ * @str: member of the list
  *
- * Return: returns address of new element or NULL if fails.
+ * Return: the new list
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *ptr, *temp;
 
-	if ((head == NULL) || (str == NULL))
+	list_t *temp = (list_t *)malloc(sizeof(list_t));
+
+	if (head == NULL || str == NULL)
+	{
 		return (NULL);
+	}
 
-	ptr = *head;
-	temp = (list_t *)malloc(sizeof(list_t));
 
 	if (temp == NULL)
-		return (NULL);
+	{
+		return (NULL); /* Memory allocation failed */
+	}
+
 	temp->str = strdup(str);
+	if (temp->str == NULL)
+	{
+		free(temp);
+		return (NULL); /* String duplication failed */
+	}
+
 	temp->len = strlen(str);
 	temp->next = NULL;
 
-	while (ptr->next != NULL)
-		ptr = ptr->next;
-	ptr->next = temp;
+	if (*head == NULL)
+	{
+		*head = temp;
+	}
+	else
+	{
+		list_t *ptr = *head;
+
+		while (ptr->next != NULL)
+		{
+			ptr = ptr->next;
+		}
+		ptr->next = temp;
+	}
+
 	return (temp);
 }
